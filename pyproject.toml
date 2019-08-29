@@ -9,3 +9,6 @@ author-email = "olav@vahtras.se"
 home-page = "https://github.com/vahtras/mdtoc"
 classifiers = ["License :: OSI Approved :: MIT License"]
 
+[tool.flit.scripts]
+mdtoc = "mdtoc:main"
+

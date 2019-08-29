@@ -44,5 +44,9 @@ def mdtoc(src):
     return toc
 
 
-if __name__ == "__main__":
+def main():
     print(mdtoc(open(sys.argv[1]).read()))
+
+
+if __name__ == "__main__":
+    main()
