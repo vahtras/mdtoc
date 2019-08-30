@@ -3,12 +3,12 @@ requires = ["flit"]
 build-backend = "flit.buildapi"
 
 [tool.flit.metadata]
-module = "mdtoc"
+module = "rftoc"
 author = "OV"
 author-email = "olav@vahtras.se"
-home-page = "https://github.com/vahtras/mdtoc"
+home-page = "https://github.com/vahtras/rftoc"
 classifiers = ["License :: OSI Approved :: MIT License"]
 
 [tool.flit.scripts]
-mdtoc = "mdtoc:main"
+rftoc = "rdtoc:main"
 

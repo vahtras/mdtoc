@@ -1,5 +1,5 @@
 import pytest
-from mdtoc import mdtoc
+from rftoc import rftoc
 
 
 @pytest.mark.parametrize(
@@ -32,7 +32,7 @@ name: second
 def test_foo(arg):
     src, expected = arg
 
-    toc = mdtoc(src)
+    toc = rftoc(src)
     assert toc == expected
 
 
@@ -46,5 +46,5 @@ def test_foo(arg):
 def test_bar(arg):
     src, expected = arg
 
-    toc = mdtoc(src, max_level=3)
+    toc = rftoc(src, max_level=3)
     assert toc == expected

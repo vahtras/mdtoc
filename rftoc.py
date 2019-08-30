@@ -9,7 +9,7 @@ import argparse
 __version__ = "0.0.2"
 
 
-def mdtoc(src, max_level=6):
+def rftoc(src, max_level=6):
 
     hn = [r'name:\s+(\w+)$'] + [r'#'*i + r' ([\w -`]+)' for i in range(1, 5)]
 
@@ -53,7 +53,7 @@ def main():
 
     args = parser.parse_args()
 
-    print(mdtoc(open(args.md), max_level=args.max_level))
+    print(rftoc(open(args.md), max_level=args.max_level))
 
 
 if __name__ == "__main__":
