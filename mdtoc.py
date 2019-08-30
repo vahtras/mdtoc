@@ -11,7 +11,7 @@ __version__ = "0.0.2"
 
 def mdtoc(src, max_level=6):
 
-    hn = [r'name:\s+(\w+)$'] + [r'#'*i + r' ([\w -]+)' for i in range(1, 5)]
+    hn = [r'name:\s+(\w+)$'] + [r'#'*i + r' ([\w -`]+)' for i in range(1, 5)]
 
     toc = ""
     for line in src:
