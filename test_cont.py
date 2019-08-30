@@ -6,6 +6,8 @@ from mdtoc import mdtoc
     'arg',
     [
         ('name: someslide\n# Foo'.split('\n'), '* [Foo](#someslide)\n'),
+        ('name: someslide\n# Foo-Bar'.split('\n'), '* [Foo-Bar](#someslide)\n'),
+        ('name: someslide\n# Foo-Bar Baz'.split('\n'), '* [Foo-Bar Baz](#someslide)\n'),
         ('name: someslide\n## Foo'.split('\n'), '    + [Foo](#someslide)\n'),
         ('name: someslide\n### Foo'.split('\n'), '        - [Foo](#someslide)\n'),
         ('name: someslide\n#### Foo'.split('\n'), '            ^ [Foo](#someslide)\n'),
