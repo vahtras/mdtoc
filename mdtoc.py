@@ -4,7 +4,7 @@ Table of content generator of markdown slides
 """
 
 import re
-import sys
+import argparse
 
 __version__ = "0.0.2"
 
@@ -44,7 +44,16 @@ def mdtoc(src, max_level=6):
 
 
 def main():
-    print(mdtoc(open(sys.argv[1])))
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('md', help='markdown file')
+    parser.add_argument(
+        '--max-level', type=int, default=6, help='Maximum level in toc'
+    )
+
+    args = parser.parse_args()
+
+    print(mdtoc(open(args.md), max_level=args.max_level))
 
 
 if __name__ == "__main__":
