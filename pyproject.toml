@@ -9,6 +9,3 @@ author-email = "olav@vahtras.se"
 home-page = "https://github.com/vahtras/rftoc"
 classifiers = ["License :: OSI Approved :: MIT License"]
 
-[tool.flit.scripts]
-rftoc = "rdtoc:main"
-
