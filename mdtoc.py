@@ -9,7 +9,7 @@ import sys
 __version__ = "0.0.2"
 
 
-def mdtoc(src):
+def mdtoc(src, max_level=6):
 
     hn = [r'name:\s+(\w+)$'] + [r'#'*i + r' ([\w -]+)' for i in range(1, 5)]
 
@@ -31,14 +31,14 @@ def mdtoc(src):
             toc += f"    + [{section_name}](#{slide_name})\n"
 
         h3 = re.match(hn[3], line)
-        if h3:
+        if h3 and max_level >= 3:
             section_name = h3.group(1)
             toc += f"        - [{section_name}](#{slide_name})\n"
 
         h4 = re.match(hn[4], line)
-        if h4:
+        if h4 and max_level >= 4:
             section_name = h4.group(1)
-            toc += f"            ^ [{section_name}](#{slide_name})\n"
+            toc += f"            * [{section_name}](#{slide_name})\n"
 
     return toc
 

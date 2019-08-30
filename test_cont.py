@@ -10,7 +10,7 @@ from mdtoc import mdtoc
         ('name: someslide\n# Foo-Bar Baz'.split('\n'), '* [Foo-Bar Baz](#someslide)\n'),
         ('name: someslide\n## Foo'.split('\n'), '    + [Foo](#someslide)\n'),
         ('name: someslide\n### Foo'.split('\n'), '        - [Foo](#someslide)\n'),
-        ('name: someslide\n#### Foo'.split('\n'), '            ^ [Foo](#someslide)\n'),
+        ('name: someslide\n#### Foo'.split('\n'), '            * [Foo](#someslide)\n'),
         (
 
 '''
@@ -33,4 +33,18 @@ def test_foo(arg):
     src, expected = arg
 
     toc = mdtoc(src)
+    assert toc == expected
+
+
+@pytest.mark.parametrize(
+    'arg',
+    [
+        ('name: someslide\n### Foo'.split('\n'), '        - [Foo](#someslide)\n'),
+        ('name: someslide\n#### Foo'.split('\n'), ''),
+    ]
+)
+def test_bar(arg):
+    src, expected = arg
+
+    toc = mdtoc(src, max_level=3)
     assert toc == expected
